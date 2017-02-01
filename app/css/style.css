@@ -1,3 +1,5 @@
+/* fonts */
+/* colors */
 /* ------------------------------------------------------------------ */
 /* O L D - B R O W S E R    J R E J E C T    N O T I F I C A T I O N  */
 /* ------------------------------------------------------------------ */
@@ -100,6 +102,34 @@
 /* ---------------------------------------- */
 /* G E N E R A L    S T Y L E               */
 /* ---------------------------------------- */
+@font-face {
+  font-family: "CirceRegular";
+  src: url("../font/CirceRegular/CirceRegular.eot");
+  src: url("../font/CirceRegular/CirceRegular.eot?#iefix") format("embedded-opentype"), url("../font/CirceRegular/CirceRegular.woff2") format("woff2"), url("../font/CirceRegular/CirceRegular.woff") format("woff"), url("../font/CirceRegular/CirceRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CirceBold";
+  src: url("../font/CirceBold/CirceBold.eot");
+  src: url("../font/CirceBold/CirceBold.eot?#iefix") format("embedded-opentype"), url("../font/CirceBold/CirceBold.woff2") format("woff2"), url("../font/CirceBold/CirceBold.woff") format("woff"), url("../font/CirceBold/CirceBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CirceExtraBold";
+  src: url("../font/CirceExtraBold/CirceExtraBold.eot");
+  src: url("../font/CirceExtraBold/CirceExtraBold.eot?#iefix") format("embedded-opentype"), url("../font/CirceExtraBold/CirceExtraBold.woff2") format("woff2"), url("../font/CirceExtraBold/CirceExtraBold.woff") format("woff"), url("../font/CirceExtraBold/CirceExtraBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CirceLight";
+  src: url("../font/CirceLight/CirceLight.eot");
+  src: url("../font/CirceLight/CirceLight.eot?#iefix") format("embedded-opentype"), url("../font/CirceLight/CirceLight.woff2") format("woff2"), url("../font/CirceLight/CirceLight.woff") format("woff"), url("../font/CirceLight/CirceLight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 .ic {
   display: inline-block;
   vertical-align: middle;
@@ -111,9 +141,388 @@
   vertical-align: middle;
 }
 
+.ic--scroll:before {
+  width: 14px;
+  height: 25px;
+  background: url('../img/icons-s0db6796eb4.png') 0 0 no-repeat;
+}
+
+.ic--about1:before {
+  width: 51px;
+  height: 52px;
+  background: url('../img/icons-s0db6796eb4.png') -166px 0 no-repeat;
+}
+
+.ic--about2:before {
+  width: 50px;
+  height: 50px;
+  background: url('../img/icons-s0db6796eb4.png') -65px 0 no-repeat;
+}
+
+.ic--about3:before {
+  width: 51px;
+  height: 42px;
+  background: url('../img/icons-s0db6796eb4.png') -14px 0 no-repeat;
+}
+
+.ic--about4:before {
+  width: 51px;
+  height: 51px;
+  background: url('../img/icons-s0db6796eb4.png') -115px 0 no-repeat;
+}
+
 /* ---------------------------------------- */
 /* H O M E    P A G E    S T Y L E          */
 /* ---------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+  height: 100%;
+}
+
 body {
-  background-color: yellow;
+  background: #c2c2c2 url(../img/bg.png) repeat;
+  color: #1a1a1a;
+  font-family: "CirceRegular", sans-serif;
+}
+
+/* btn styles */
+.btn__modal {
+  position: relative;
+  z-index: 25;
+  display: inline-block;
+  padding: 15px 18px;
+  text-align: center;
+  background-color: #df4c43;
+  -webkit-box-shadow: 0 0 15px 10px rgba(223, 76, 67, 0.35);
+          box-shadow: 0 0 15px 10px rgba(223, 76, 67, 0.35);
+  color: #fff;
+  font: 400 16px/18px "CirceBold", sans-serif;
+}
+.btn__modal:hover, .btn__modal:focus {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+/* header styles */
+.header {
+  padding-top: 30px;
+}
+
+.logo__link {
+  display: block;
+}
+
+.call {
+  font: 400 14px/18px "CirceRegular", sans-serif;
+}
+.call__phone {
+  font-family: "CirceBold", sans-serif;
+  margin-left: -12px;
+}
+.call__number {
+  color: #1a1a1a;
+}
+.call__number:hover, .call__number:focus {
+  color: #df4c43;
+  text-decoration: none;
+}
+.call__btn {
+  display: inline-block;
+  margin-top: 5px;
+  color: #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+}
+.call__btn:hover, .call__btn:focus {
+  text-decoration: none;
+  color: #df4c43;
+  border-color: #df4c43;
+}
+.call__icon {
+  color: #df4c43;
+  font-size: 18px;
+  position: relative;
+  top: 25px;
+  right: -15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    padding-top: 15px;
+  }
+
+  .call {
+    font: 400 16px/18px "CirceRegular", sans-serif;
+  }
+  .call__phone {
+    margin-bottom: 0;
+  }
+  .call__icon {
+    position: static;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .header {
+    padding-top: 30px;
+  }
+
+  .call {
+    font: 400 18px/20px "CirceRegular", sans-serif;
+  }
+}
+/* intro styles */
+.intro {
+  padding: 40px 0 30px;
+}
+.intro__heading {
+  text-align: center;
+  color: #939598;
+  font: 400 14px/21px "CirceRegular", sans-serif;
+  margin: 0 0 30px;
+}
+.intro__title {
+  position: relative;
+  text-align: center;
+  color: #1a1a1a;
+  font: 400 24px/28px "CirceExtraBold", sans-serif;
+  margin: 0 0 10px;
+  z-index: 25;
+}
+.intro__subtitle {
+  position: relative;
+  text-align: center;
+  color: #1a1a1a;
+  font: 400 16px/24px "CirceExtraBold", sans-serif;
+  margin-bottom: 30px;
+  z-index: 25;
+}
+.intro__box {
+  position: relative;
+}
+.intro__ic--1 {
+  display: inline-block;
+  position: absolute;
+  background: url(../img/intro1.png) no-repeat;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  height: 110px;
+  width: 100px;
+  left: -45px;
+  top: -75px;
+}
+.intro__ic--2 {
+  display: inline-block;
+  position: absolute;
+  background: url(../img/intro2.png) no-repeat;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  height: 85px;
+  width: 60px;
+  right: -40px;
+  bottom: 100px;
+}
+.intro__link {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .intro {
+    padding-top: 70px;
+  }
+  .intro__heading {
+    font: 400 16px/22px "CirceRegular", sans-serif;
+  }
+  .intro__title {
+    font: 400 32px/36px "CirceExtraBold", sans-serif;
+  }
+  .intro__subtitle {
+    font: 400 20px/24px "CirceExtraBold", sans-serif;
+    margin-bottom: 40px;
+  }
+  .intro__btn {
+    margin-bottom: 50px;
+  }
+  .intro__ic--1 {
+    width: 250px;
+    height: 220px;
+    left: -70px;
+  }
+  .intro__ic--2 {
+    height: 122px;
+    width: 92px;
+    right: -50px;
+    bottom: -70px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .intro {
+    padding-top: 80px;
+  }
+  .intro__heading {
+    font: 400 18px/24px "CirceRegular", sans-serif;
+    margin-bottom: 35px;
+  }
+  .intro__title {
+    font: 400 48px/52px "CirceExtraBold", sans-serif;
+  }
+  .intro__subtitle {
+    font: 400 24px/26px "CirceExtraBold", sans-serif;
+    margin-bottom: 65px;
+  }
+  .intro__btn {
+    margin-bottom: 100px;
+  }
+  .intro__ic--1 {
+    height: 267px;
+    width: 308px;
+    left: -45px;
+    top: -75px;
+  }
+  .intro__ic--2 {
+    right: -25px;
+    bottom: -45px;
+  }
+}
+/* destiny styles */
+.destiny {
+  padding: 30px 0 50px;
+}
+.destiny__heading {
+  text-align: center;
+  color: #1a1a1a;
+  font: 400 24px/36px "CirceExtraBold", sans-serif;
+  margin-bottom: 20px;
+}
+
+.user__box {
+  padding-top: 25px;
+  margin-bottom: 25px;
+}
+.user__name {
+  position: relative;
+  color: #1a1a1a;
+  font: 400 24px/26px "CirceExtraBold", sans-serif;
+  margin-bottom: 20px;
+}
+.user__name--span {
+  position: absolute;
+  left: -3px;
+  top: -25px;
+  display: inline-block;
+  color: #df4c43;
+  opacity: 0.2;
+  font: 400 72px/72px "CirceExtraBold", sans-serif;
+}
+.user__text {
+  font: 400 16px/24px "CirceRegular", sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  .destiny {
+    padding-top: 70px;
+  }
+  .destiny__heading {
+    margin-bottom: 35px;
+  }
+
+  .user__col {
+    margin-bottom: 30px;
+  }
+  .user__box {
+    padding: 50px 0 0 25px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .destiny {
+    padding-top: 100px;
+  }
+  .destiny__heading {
+    font: 400 36px/40px "CirceExtraBold", sans-serif;
+    margin-bottom: 25px;
+  }
+
+  .user__box {
+    padding: 20px 0 0 22px;
+  }
+  .user__text {
+    font: 400 18px/24px "CirceRegular", sans-serif;
+  }
+}
+/* about styles */
+.about {
+  padding: 30px 0;
+}
+.about__col {
+  border: 15px solid rgba(0, 0, 0, 0.1);
+}
+.about__box {
+  padding: 20px 0;
+  margin: 0 -12px 0 -40px;
+}
+.about__title {
+  color: #1a1a1a;
+  font: 400 24px/36px "CirceExtraBold", sans-serif;
+  margin-bottom: 10px;
+}
+.about__subtitle {
+  color: #939598;
+  font: 400 16px/20px "CirceBold", sans-serif;
+}
+.about__item {
+  display: table;
+  margin-bottom: 30px;
+}
+.about__icon {
+  display: table-cell;
+  padding-right: 10px;
+  vertical-align: top;
+}
+.about__text {
+  display: table-cell;
+  padding-left: 5px;
+  color: #1a1a1a;
+  font: 400 16px/24px "CirceBold", sans-serif;
+  vertical-align: top;
+}
+
+@media only screen and (min-width: 768px) {
+  .about__col {
+    border: 20px solid rgba(0, 0, 0, 0.1);
+  }
+  .about__box {
+    margin: 0px -12px 0 -130px;
+  }
+  .about__subtitle {
+    font: 400 24px/26px "CirceBold", sans-serif;
+  }
+  .about__icon {
+    padding-right: 15px;
+    vertical-align: middle;
+  }
+  .about__text {
+    padding-left: 15px;
+    font: 400 20px/30px "CirceBold", sans-serif;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .about__col {
+    border: 40px solid rgba(0, 0, 0, 0.1);
+  }
+  .about__box {
+    margin: 0px 0 0 -185px;
+  }
+  .about__title {
+    font: 400 36px/54px "CirceExtraBold", sans-serif;
+    margin-bottom: 25px;
+  }
+  .about__text {
+    font: 400 24px/36px "CirceBold", sans-serif;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .about__box {
+    margin: 0px 0 0 -210px;
+  }
 }

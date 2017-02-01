@@ -1,6 +1,275 @@
 +comment('general style')
++font('CirceRegular', 'CirceRegular')
++font('CirceBold', 'CirceBold')
++font('CirceExtraBold', 'CirceExtraBold')
++font('CirceLight', 'CirceLight')
 +ic
-
-+comment("home page style")
+@each $ic in scroll, about1, about2, about3, about4
+  .ic--#{$ic}
+    +sb(#{$ic})
++comment('home page style')
+html
+  position: relative
+  min-height: 100%
+  height: 100%
 body
-  background-color: yellow
+  background: #c2c2c2 url(../img/bg.png) repeat
+  color: $main-text-color
+  font-family: $font-circe
++cm('btn styles') 
+.btn
+  &__modal
+    position: relative
+    z-index: 25
+    display: inline-block
+    padding: 15px 18px
+    text-align: center
+    background-color: #df4c43
+    box-shadow: 0 0 15px 10px rgba(223, 76, 67, 0.35)
+    color: #fff
+    font: 400 16px/18px $font-circe-bold
+    &:hover,
+    &:focus
+      text-decoration: none
+      color: $main-text-color   
++cm('header styles')  
+.header
+  padding-top: 30px
+.logo
+  &__link
+    display: block  
+.call 
+  font: 400 14px/18px $font-circe  
+  &__phone
+    font-family: $font-circe-bold
+    margin-left: -12px
+  &__number
+    color: $main-text-color
+    &:hover,
+    &:focus
+      color: $main-red-color
+      text-decoration: none
+  &__btn
+    display: inline-block
+    margin-top: 5px
+    color: $main-text-color  
+    border-bottom: 1px solid $main-text-color
+    &:hover,
+    &:focus
+      text-decoration: none
+      color: $main-red-color
+      border-color: $main-red-color
+  &__icon
+    color: $main-red-color
+    font-size: 18px
+    position: relative
+    top: 25px
+    right: -15px
++r(768)
+  .header
+    padding-top: 15px
+  .call  
+    font: 400 16px/18px $font-circe 
+    &__phone
+      margin-bottom: 0
+    &__icon
+      position: static  
++r(992)
+  .header
+    padding-top: 30px
+  .call  
+    font: 400 18px/20px $font-circe 
++cm('intro styles')     
+.intro
+  padding: 40px 0 30px
+  &__heading
+    text-align: center
+    color: #939598
+    font: 400 14px/21px $font-circe 
+    margin: 0 0 30px
+  &__title
+    position: relative
+    text-align: center
+    color: #1a1a1a  
+    font: 400 24px/28px $font-circe-extra-bold
+    margin: 0 0 10px
+    z-index: 25
+  &__subtitle
+    position: relative
+    text-align: center 
+    color: #1a1a1a 
+    font: 400 16px/24px $font-circe-extra-bold
+    margin-bottom: 30px
+    z-index: 25
+  &__box
+    position: relative  
+  &__ic
+    &--1
+      display: inline-block
+      position: absolute
+      background: url(../img/intro1.png) no-repeat
+      +contain
+      height: 110px
+      width: 100px
+      left: -45px
+      top: -75px
+    &--2
+      display: inline-block
+      position: absolute
+      background: url(../img/intro2.png) no-repeat
+      +contain
+      height: 85px
+      width: 60px
+      right: -40px
+      bottom: 100px
+  &__link
+    display: block    
++r(768)
+  .intro
+    padding-top: 70px
+    &__heading
+      font: 400 16px/22px $font-circe
+    &__title  
+      font: 400 32px/36px $font-circe-extra-bold
+    &__subtitle  
+      font: 400 20px/24px $font-circe-extra-bold
+      margin-bottom: 40px
+    &__btn
+      margin-bottom: 50px  
+    &__ic
+      &--1
+        width: 250px
+        height: 220px
+        left: -70px  
+      &--2  
+        height: 122px
+        width: 92px
+        right: -50px
+        bottom: -70px
++r(992)  
+  .intro
+    padding-top: 80px  
+    &__heading
+      font: 400 18px/24px $font-circe
+      margin-bottom: 35px
+    &__title  
+      font: 400 48px/52px $font-circe-extra-bold  
+    &__subtitle  
+      font: 400 24px/26px $font-circe-extra-bold
+      margin-bottom: 65px
+    &__btn
+      margin-bottom: 100px  
+    &__ic
+      &--1
+        height: 267px
+        width: 308px
+        left: -45px
+        top: -75px
+      &--2
+        right: -25px
+        bottom: -45px  
++cm('destiny styles')
+.destiny      
+  padding: 30px 0 50px
+  &__heading
+    text-align: center
+    color: #1a1a1a
+    font: 400 24px/36px $font-circe-extra-bold 
+    margin-bottom: 20px
+.user
+  &__box
+    padding-top: 25px
+    margin-bottom: 25px
+  &__name    
+    position: relative
+    color: #1a1a1a
+    font: 400 24px/26px $font-circe-extra-bold 
+    margin-bottom: 20px
+    &--span
+      position: absolute
+      left: -3px
+      top: -25px
+      display: inline-block
+      color: #df4c43
+      opacity: 0.2
+      font: 400 72px/72px $font-circe-extra-bold
+  &__text  
+    font: 400 16px/24px $font-circe
++r(768)
+  .destiny
+    padding-top: 70px
+    &__heading
+      margin-bottom: 35px
+  .user
+    &__col
+      margin-bottom: 30px
+    &__box
+      padding: 50px 0 0 25px    
++r(992)  
+  .destiny
+    padding-top: 100px
+    &__heading
+      font: 400 36px/40px $font-circe-extra-bold 
+      margin-bottom: 25px
+  .user
+    &__box
+      padding: 20px 0 0 22px  
+    &__text  
+      font: 400 18px/24px $font-circe  
++cm('about styles')      
+.about
+  padding: 30px 0
+  &__col
+    border: 15px solid rgba(0,0,0,0.1)
+  &__box
+    padding: 20px 0
+    margin: 0 -12px 0 -40px
+  &__title
+    color: #1a1a1a  
+    font: 400 24px/36px $font-circe-extra-bold
+    margin-bottom: 10px
+  &__subtitle  
+    color: #939598
+    font: 400 16px/20px $font-circe-bold
+  &__item
+    display: table
+    margin-bottom: 30px
+  &__icon
+    display: table-cell
+    padding-right: 10px
+    vertical-align: top
+  &__text
+    display: table-cell  
+    padding-left: 5px
+    color: #1a1a1a
+    font: 400 16px/24px $font-circe-bold
+    vertical-align: top
++r(768)
+  .about
+    &__col
+      border: 20px solid rgba(0,0,0,0.1)
+    &__box  
+      margin: 0px -12px 0 -130px
+    &__subtitle  
+      font: 400 24px/26px $font-circe-bold
+    &__icon
+      padding-right: 15px
+      vertical-align: middle
+    &__text
+      padding-left: 15px
+      font: 400 20px/30px $font-circe-bold
++r(992)      
+  .about
+    &__col
+      border: 40px solid rgba(0,0,0,0.1)
+    &__box  
+      margin: 0px 0 0 -185px  
+    &__title  
+      font: 400 36px/54px $font-circe-extra-bold
+      margin-bottom: 25px
+    &__text  
+      font: 400 24px/36px $font-circe-bold   
++r(1200) 
+  .about
+    &__box
+      margin: 0px 0 0 -210px 
