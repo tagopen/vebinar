@@ -16,6 +16,7 @@ body
   background: #c2c2c2 url(../img/bg.png) repeat
   color: $main-text-color
   font-family: $font-circe
+  overflow-x: hidden
 +cm('btn styles') 
 .btn
   &__modal
@@ -219,16 +220,23 @@ body
 +cm('about styles')      
 .about
   padding: 30px 0
+  &__head
+    position: relative
+    margin-bottom: 50px
   &__col
     border: 15px solid rgba(0,0,0,0.1)
   &__box
     padding: 20px 0
     margin: 0 -12px 0 -40px
   &__title
+    position: relative
+    z-index: 25
     color: #1a1a1a  
     font: 400 24px/36px $font-circe-extra-bold
     margin-bottom: 10px
   &__subtitle  
+    position: relative
+    z-index: 25
     color: #939598
     font: 400 16px/20px $font-circe-bold
   &__item
@@ -244,12 +252,26 @@ body
     color: #1a1a1a
     font: 400 16px/24px $font-circe-bold
     vertical-align: top
+  &__lamp  
+    display: inline-block
+    background: url(../img/lamp.png) no-repeat
+    +contain
+    position: absolute
+    height: 180px
+    width: 228px
+    right: -70px
+    top: -70px
 +r(768)
   .about
+    &__head
+      margin-bottom: 0
     &__col
       border: 20px solid rgba(0,0,0,0.1)
     &__box  
       margin: 0px -12px 0 -130px
+      padding-top: 50px
+    &__item
+      margin-bottom: 40px  
     &__subtitle  
       font: 400 24px/26px $font-circe-bold
     &__icon
@@ -258,18 +280,32 @@ body
     &__text
       padding-left: 15px
       font: 400 20px/30px $font-circe-bold
+    &__lamp
+      height: 400px
+      width: 550px  
+      right: 40px
+      top: 200px
 +r(992)      
   .about
     &__col
       border: 40px solid rgba(0,0,0,0.1)
     &__box  
       margin: 0px 0 0 -185px  
+    &__item
+      margin-bottom: 50px  
     &__title  
       font: 400 36px/54px $font-circe-extra-bold
       margin-bottom: 25px
     &__text  
-      font: 400 24px/36px $font-circe-bold   
+      font: 400 24px/36px $font-circe-bold  
+    &__lamp
+      height: 500px
+      width: 650px
+      right: 70px
+      top: 290px
 +r(1200) 
   .about
     &__box
       margin: 0px 0 0 -210px 
+    &__lamp
+      top: 220px  

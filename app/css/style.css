@@ -184,6 +184,7 @@ body {
   background: #c2c2c2 url(../img/bg.png) repeat;
   color: #1a1a1a;
   font-family: "CirceRegular", sans-serif;
+  overflow-x: hidden;
 }
 
 /* btn styles */
@@ -454,6 +455,10 @@ body {
 .about {
   padding: 30px 0;
 }
+.about__head {
+  position: relative;
+  margin-bottom: 50px;
+}
 .about__col {
   border: 15px solid rgba(0, 0, 0, 0.1);
 }
@@ -462,11 +467,15 @@ body {
   margin: 0 -12px 0 -40px;
 }
 .about__title {
+  position: relative;
+  z-index: 25;
   color: #1a1a1a;
   font: 400 24px/36px "CirceExtraBold", sans-serif;
   margin-bottom: 10px;
 }
 .about__subtitle {
+  position: relative;
+  z-index: 25;
   color: #939598;
   font: 400 16px/20px "CirceBold", sans-serif;
 }
@@ -486,13 +495,32 @@ body {
   font: 400 16px/24px "CirceBold", sans-serif;
   vertical-align: top;
 }
+.about__lamp {
+  display: inline-block;
+  background: url(../img/lamp.png) no-repeat;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  position: absolute;
+  height: 180px;
+  width: 228px;
+  right: -70px;
+  top: -70px;
+}
 
 @media only screen and (min-width: 768px) {
+  .about__head {
+    margin-bottom: 0;
+  }
   .about__col {
     border: 20px solid rgba(0, 0, 0, 0.1);
   }
   .about__box {
     margin: 0px -12px 0 -130px;
+    padding-top: 50px;
+  }
+  .about__item {
+    margin-bottom: 40px;
   }
   .about__subtitle {
     font: 400 24px/26px "CirceBold", sans-serif;
@@ -505,6 +533,12 @@ body {
     padding-left: 15px;
     font: 400 20px/30px "CirceBold", sans-serif;
   }
+  .about__lamp {
+    height: 400px;
+    width: 550px;
+    right: 40px;
+    top: 200px;
+  }
 }
 @media only screen and (min-width: 992px) {
   .about__col {
@@ -513,6 +547,9 @@ body {
   .about__box {
     margin: 0px 0 0 -185px;
   }
+  .about__item {
+    margin-bottom: 50px;
+  }
   .about__title {
     font: 400 36px/54px "CirceExtraBold", sans-serif;
     margin-bottom: 25px;
@@ -520,9 +557,18 @@ body {
   .about__text {
     font: 400 24px/36px "CirceBold", sans-serif;
   }
+  .about__lamp {
+    height: 500px;
+    width: 650px;
+    right: 70px;
+    top: 290px;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .about__box {
     margin: 0px 0 0 -210px;
+  }
+  .about__lamp {
+    top: 220px;
   }
 }
