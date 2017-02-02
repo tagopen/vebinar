@@ -4,7 +4,7 @@
 +font('CirceExtraBold', 'CirceExtraBold')
 +font('CirceLight', 'CirceLight')
 +ic
-@each $ic in scroll, about1, about2, about3, about4
+@each $ic in scroll, about1, about2, about3, about4, arrow320, arrow768, arrow992
   .ic--#{$ic}
     +sb(#{$ic})
 +comment('home page style')
@@ -17,13 +17,42 @@ body
   color: $main-text-color
   font-family: $font-circe
   overflow-x: hidden
++cm('form styles')  
+.form
+  border: 10px solid #df4c43
+  padding: 40px 15px 
+  margin: 0 auto
+  max-width: 310px
+  &__input
+    text-align: center
+    background-color: transparent
+    border-radius: 0
+    color: $main-text-color
+    font: 400 16px/18px $font-circe
+    padding: 8px
+    border-bottom: 1px solid $main-text-color
+    +placeholder
+      color: $main-text-color
+      font: 400 16px/18px $font-circe
+    &:focus  
+      border-color: #df4c43
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(223,76,67,0.8)
+  &--btn
+    width: 100%
++r(768)
+  .form
+    padding: 50px  
+    max-width: none
++r(992)    
+  .form
+    padding: 80px 60px 60px
 +cm('btn styles') 
 .btn
   &__modal
     position: relative
     z-index: 25
     display: inline-block
-    padding: 15px 18px
+    padding: 15px 12px
     text-align: center
     background-color: #df4c43
     box-shadow: 0 0 15px 10px rgba(223, 76, 67, 0.35)
@@ -91,14 +120,14 @@ body
   &__title
     position: relative
     text-align: center
-    color: #1a1a1a  
+    color: $main-text-color  
     font: 400 24px/28px $font-circe-extra-bold
     margin: 0 0 10px
     z-index: 25
   &__subtitle
     position: relative
     text-align: center 
-    color: #1a1a1a 
+    color: $main-text-color 
     font: 400 16px/24px $font-circe-extra-bold
     margin-bottom: 30px
     z-index: 25
@@ -174,7 +203,7 @@ body
   padding: 30px 0 50px
   &__heading
     text-align: center
-    color: #1a1a1a
+    color: $main-text-color
     font: 400 24px/36px $font-circe-extra-bold 
     margin-bottom: 20px
 .user
@@ -183,7 +212,7 @@ body
     margin-bottom: 25px
   &__name    
     position: relative
-    color: #1a1a1a
+    color: $main-text-color
     font: 400 24px/26px $font-circe-extra-bold 
     margin-bottom: 20px
     &--span
@@ -219,19 +248,18 @@ body
       font: 400 18px/24px $font-circe  
 +cm('about styles')      
 .about
-  padding: 30px 0
+  padding: 30px 0 0
+  margin-bottom: 60px
   &__head
     position: relative
     margin-bottom: 50px
-  &__col
-    border: 15px solid rgba(0,0,0,0.1)
   &__box
     padding: 20px 0
     margin: 0 -12px 0 -40px
   &__title
     position: relative
     z-index: 25
-    color: #1a1a1a  
+    color: $main-text-color  
     font: 400 24px/36px $font-circe-extra-bold
     margin-bottom: 10px
   &__subtitle  
@@ -249,7 +277,7 @@ body
   &__text
     display: table-cell  
     padding-left: 5px
-    color: #1a1a1a
+    color: $main-text-color
     font: 400 16px/24px $font-circe-bold
     vertical-align: top
   &__lamp  
@@ -261,12 +289,13 @@ body
     width: 228px
     right: -70px
     top: -70px
+.col--bordered
+  border: 15px solid rgba(0,0,0,0.1)    
 +r(768)
   .about
+    margin-bottom: 110px
     &__head
       margin-bottom: 0
-    &__col
-      border: 20px solid rgba(0,0,0,0.1)
     &__box  
       margin: 0px -12px 0 -130px
       padding-top: 50px
@@ -285,10 +314,11 @@ body
       width: 550px  
       right: 40px
       top: 200px
+  .col--bordered
+    border: 20px solid rgba(0,0,0,0.1)
 +r(992)      
   .about
-    &__col
-      border: 40px solid rgba(0,0,0,0.1)
+    margin-bottom: 150px
     &__box  
       margin: 0px 0 0 -185px  
     &__item
@@ -301,11 +331,171 @@ body
     &__lamp
       height: 500px
       width: 650px
-      right: 70px
+      right: 65px
       top: 290px
+  .col--bordered
+    border: 40px solid rgba(0,0,0,0.1)    
 +r(1200) 
   .about
     &__box
       margin: 0px 0 0 -210px 
     &__lamp
       top: 220px  
+      right: 105px
++cm('master styles') 
+.master
+  margin-bottom: 60px
+  &__image
+    text-align: center
+    img
+      display: inline-block
+  &__heading
+    color: $main-text-color
+    font: 400 14px/20px $font-circe-bold 
+    margin-bottom: 15px
+    &--span
+      font: 400 18px/20px $font-circe-bold 
+  &__text 
+    color: $main-text-color
+    font: 400 16px/24px $font-circe
+    &--span
+      color: $main-red-color
+      font-family: $font-circe-bold 
++r(768) 
+  .master
+    margin-bottom: 100px
+    &__heading
+      font: 400 20px/24px $font-circe-bold
+      margin-bottom: 20px
+      &--span
+        font: 400 24px/28px $font-circe-bold    
++r(992) 
+  .master
+    margin-bottom: 140px
+    &__heading
+      font: 400 24px/30px $font-circe-bold
+      margin-bottom: 30px
+      &--span
+        font: 400 36px/40px $font-circe-bold
+    &__text   
+      font: 400 18px/24px $font-circe  
++cm('register styles')       
+.register
+  margin-bottom: 50px
+  &__heading
+    color: $main-text-color
+    font: 400 24px/36px $font-circe-extra-bold
+    margin-bottom: 25px
+  &__text  
+    color: $main-text-color
+    font: 400 18px/27px $font-circe-bold
+    margin-bottom: 30px
+  &__image
+    margin-left: -55px  
+.countdown
+  margin-bottom: 30px
+  &__elem
+    font: 400 36px/40px $font-circe-bold
+    max-width: 150px
+    margin: 0 auto
+    color: #fff
+    text-align: center
+    background-color: $main-red-color  
+    padding: 12px 0
+  &__text
+    text-align: center  
+    color: #fff 
+    font: 400 18px/20px $font-circe-bold 
++r(768)     
+  .register
+    &__col
+      float: right
+    &__text,  
+    &__image
+      margin: 0    
+  .countdown
+    margin-bottom: 45px
+    &__elem
+      font: 400 48px/50px $font-circe-bold    
+    &__text  
+      font: 400 20px/22px $font-circe-bold 
++r(992)     
+  .register
+    &__heading
+      font: 400 36px/40px $font-circe-extra-bold
+      margin-bottom: 30px 
+    &__text  
+      font: 400 24px/36px $font-circe-bold    
+  .countdown
+    margin-bottom: 60px
+    &__elem
+      font: 400 72px/80px $font-circe-bold    
+    &__text  
+      font: 400 24px/28px $font-circe-bold  
++cm('program styles')          
+.program
+  padding-top: 50px
+  &__heading
+    color: $main-text-color
+    font: 400 14px/21px $font-circe-extra-bold
+    margin-bottom: 50px
+    text-align: right
+  &__text  
+    position: relative
+    color: $main-text-color
+    font: 400 18px/21px $font-circe-light
+    margin-bottom: 80px
+    text-align: right
+  &__span
+    display: block  
+    color: $main-red-color
+    font: 400 30px/36px $font-circe-extra-bold
+    text-transform: uppercase
+.ic
+  &--arrow320
+    display: inline-block !important
+    position: absolute
+    top: 50px
+    right: 30px
+  &--arrow768,
+  &--arrow992
+    display: none
+    visibility: hidden  
++r(768) 
+  .program
+    &__heading
+      text-align: center
+      font: 400 20px/30px $font-circe-extra-bold
+    &__span
+      font: 400 36px/40px $font-circe-extra-bold 
+    &--btn
+      top: 10px  
+  .ic
+    &--arrow320
+      display: none
+      visibility: hidden
+    &--arrow768
+      display: inline-block
+      visibility: visible      
+      position: absolute
+      right: -150px
+      bottom: -50px
++r(992)  
+  .program
+    &__heading
+      font: 400 24px/30px $font-circe-extra-bold  
+    &__text  
+      font: 400 36px/40px $font-circe-light 
+    &__span
+      font: 400 70px/76px $font-circe-extra-bold  
+    &--btn
+      top: 50px  
+  .ic
+    &--arrow768
+      display: none
+      visibility: hidden  
+    &--arrow992
+      display: inline-block
+      visibility: visible
+      position: absolute
+      right: -200px    

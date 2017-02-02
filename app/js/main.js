@@ -24,77 +24,39 @@ $(function() {
   });
 });
 
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-/*$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});*/
-
-
-// Fixed navbar on Scroll
-/*if(!$('.navbar-toggle').is(':visible')) {
-  $('.navbar').affix({
-    offset: {
-      top: $('header').innerHeight()
+// Equal Height function
+function setEqualHeight(columns)
+{
+  var tallestcolumn = 0;
+  columns.each(
+    function()
+    {
+      currentHeight = $(this).height();
+      if(currentHeight > tallestcolumn)
+      {
+        tallestcolumn = currentHeight;
+      }
     }
-  }); 
-}*/
-
-// Highlight the top nav as scrolling occurs
-/*$('body').scrollspy({
-    target: '.navbar-fixed-top'
-})*/
-
-// Navbar class active
-/*$(document).ready( function () {
-  $(".nav li").click( function () {
-    $(".nav li").removeClass("active");
-    $(this).addClass("active");
-  });
-});*/
-
-// Dropdowns on hover on desktop
-/*var navbarToggle = '.navbar-toggle'; // name of navbar toggle, BS3 = '.navbar-toggle', BS4 = '.navbar-toggler'  
-$('.dropdown, .dropup').each(function() {
-  var dropdown = $(this),
-    dropdownToggle = $('[data-toggle="dropdown"]', dropdown),
-    dropdownHoverAll = dropdownToggle.data('dropdown-hover-all') || false;
-  
-  // Mouseover
-  dropdown.hover(function(){
-    var notMobileMenu = $(navbarToggle).size() > 0 && $(navbarToggle).css('display') === 'none' && $(document).width() >= 992 ;
-    if ((dropdownHoverAll === true || (dropdownHoverAll === false && notMobileMenu))) { 
-      dropdownToggle.trigger('click');
-    }
-  });
-});*/
-
-
-// Close dropdowns on "esc"
-/*$('.dropdown-menu').bind('keydown',function(event) {
-  // ESC = Keycode 27
-  if (event.keyCode == 27) {
-    $(this).parrent().find('.dropdown-toggle').dropdown('toggle');
+    );
+  columns.height(tallestcolumn);
+}
+// Equial Height
+$(window).on('resize', function(){
+  // Only 768px +
+  if( $( window ).width() >= 768 ) {
+    // User section
+    setEqualHeight($('.user__name'));
   }
-});*/
+}).trigger('resize');
 
-// Closes the Responsive Menu on Menu Item Click
-/*$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});*/
+// Masked phone
+$(function($){
+  $(".form__input--phone").mask("+38 (999) 999-99-99");
+});
 
-// Equal height
-/*$('.equial').equialHeight();*/
-
-/*$('.slider').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  adaptiveHeight: true
-});*/
+$('.countdown > .row').countdown('2017/02/05', function(event) {
+  var $this = $(this).html(event.strftime(''
+    + '<div class="col-xs-4 col-md-3"><div class="countdown__elem">%d<div class="countdown__text">Дней</div></div></div> '
+    + '<div class="col-xs-4 col-md-3"><div class="countdown__elem">%H<div class="countdown__text">Часов</div></div></div> '
+    + '<div class="col-xs-4 col-md-3"><div class="countdown__elem">%M<div class="countdown__text">Минут</div></div></div> '));
+});
